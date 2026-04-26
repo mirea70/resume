@@ -199,19 +199,29 @@ a { color: inherit; text-decoration: none; }
 .proj-bullets li { font-size: 15px; color: #475569; line-height: 1.9; }
 .proj-bullets li strong { color: #0f172a; }
 
+/* ── PAGE NAV (next button) ── */
+.page-nav-next { transition: background-color .2s, color .2s; }
+.page-nav-next:hover { background: #f97316 !important; color: #ffffff !important; }
+
 /* ── PRINT ── */
 @media print {
   @page { size: A4; margin: 14mm 12mm; }
   html, body { background: #fff !important; }
-  body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; zoom: 0.75; }
   .top-nav, #page-nav, #playstore-modal, .ss-tabs, .footer { display: none !important; }
   .container { max-width: 100% !important; padding: 0 !important; }
-  .page { display: block !important; page-break-before: always; animation: none !important; opacity: 1 !important; transform: none !important; }
-  .page:first-of-type { page-break-before: auto; }
+  .page { display: block !important; animation: none !important; opacity: 1 !important; transform: none !important; }
   .ss-group { display: block !important; page-break-inside: avoid; margin-bottom: 16px; }
   .ss-group::before { content: attr(data-tab-label); display: block; font-size: 13px; font-weight: 700; color: #f97316; margin-bottom: 8px; }
   .phone-frame, .proj-card, .feature-item, .ts-step, .about-trait, .card { page-break-inside: avoid; }
   .section-title, .section-title-lg { page-break-after: avoid; }
+  .proj-card { padding: 8px 20px !important; margin-bottom: 12px !important; }
+  .proj-desc { padding: 10px 14px !important; margin-bottom: 16px !important; line-height: 1.5 !important; }
+  .proj-bullets li { line-height: 1.7 !important; margin-bottom: 6px !important; }
+  .proj-section-title { margin: 6px 0 4px !important; }
+  .proj-stack { margin-bottom: 16px !important; }
+  .no-print-divider { border-bottom: none !important; }
+  #pg-education .career-list li { line-height: 1.6 !important; margin-bottom: 6px !important; }
   a { color: inherit; text-decoration: none; }
   a[href^="http"]::after { content: ""; }
   .hero { page-break-inside: avoid; }
@@ -247,16 +257,16 @@ a { color: inherit; text-decoration: none; }
     </div>
 
       <p class="hero-sub greet" style="margin-top:28px;">😊 안녕하세요!</p>
-      <p class="hero-sub">좋은 설계를 통한 안정적인 시스템을 제공할 수 있는 개발자를 향해 나아가고 있는<br> 박성재라고 합니다. 구체적으로는 아래와 같은 성향을 갖고 있습니다.</p>
+      <p class="hero-sub">좋은 설계를 통해 안정적인 시스템을 제공할 수 있는 개발자를 향해 나아가고 있는<br> 박성재라고 합니다. 구체적으로는 아래와 같은 성향을 갖고 있습니다.</p>
   </div>
 
   <!-- About -->
-  <h3 class="section-title">About Me</h3>
+  <h3 class="section-title" style="margin-top:0;">About Me</h3>
   <div class="about-grid">
     <div class="about-trait">
       <div class="about-trait-icon">🤔</div>
       <div class="about-trait-title">서비스에 대한 주인의식을 갖고 일합니다.</div>
-      <div class="about-trait-desc">사용자 입장에서 더 나은 서비스를 제공할 수 있을지 동료와 함께 고민합니다. 패션 플랫폼 활성화 방안을 제안한 경험이 있습니다.</div>
+      <div class="about-trait-desc">사용자 입장에서 더 나은 서비스를 제공할 수 있을지 동료와 함께 고민하곤 합니다. 패션 플랫폼 활성화 방안을 제안한 경험이 있습니다.</div>
     </div>
     <div class="about-trait">
       <div class="about-trait-icon">📈</div>
@@ -270,7 +280,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="about-trait">
       <div class="about-trait-icon">⚖️</div>
-      <div class="about-trait-title">오버 엔지니어링을 경계하고 트레이드 오프를 고려하는 태도를 가지고 있습니다.</div>
+      <div class="about-trait-title">오버 엔지니어링 경계 및 트레이드 오프를 고려하는 태도</div>
       <div class="about-trait-desc">모든 상황에 항상 정답인 방법은 없다고 생각합니다. 항상 트레이드 오프를 고려하여 주어진 상황에서 보다 적합한 선택을 해나가기위해 노력합니다.</div>
     </div>
   </div>
@@ -279,19 +289,20 @@ a { color: inherit; text-decoration: none; }
   <h3 class="section-title">Key Experience</h3>
   <ul class="career-list" style="padding-left:24px;">
       <li>Java/Spring Boot 기반 <strong>REST API 설계 및 개발</strong></li>
-    <li>커머스 시스템의 상품등록 <strong>13분대 걸리던 이슈 → 1분대로 단축</strong> 경험</strong><a class="notion-link" href="https://mirea70.github.io/Portfolio/#Walaland" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>상세 보기</a></li>
+    <li>커머스 시스템의 상품등록 <strong>13분대 걸리던 이슈 → 1분대로 단축</strong> 경험<a class="notion-link" href="https://mirea70.github.io/Portfolio/#Walaland" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>상세 보기</a></li>
+    <li><strong>서버 자원의 한계</strong>를 겪고, 측정된 지표를 기반으로 상황에 따라 합리적인 확장 방안을 선택해나가는 경험<a class="notion-link" href="https://mirea70.github.io/Portfolio/?section=trouble-2#toy" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>상세 보기</a></li>
     <li><strong>RDBMS 기반 쿼리 효율 개선 경험</strong><a class="notion-link" href="https://www.notion.so/1e448da4fecf8036b282f7d4871d75f7?pvs=21" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>Notion</a></li>
     <li><strong>캐시 만료 타이밍에 대한 동시성 이슈 해결 경험</strong><a class="notion-link" href="https://www.notion.so/Request-Collapsing-20348da4fecf80de9568c5857d5d734a?pvs=21" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>Notion</a></li>
     <li>도메인 주도 개발 및 <strong>클린 아키텍처 리펙토링 경험</strong><a class="notion-link" href="https://www.notion.so/Clean-Architecture-43fd2194e6eb473da56b648afda78605?pvs=21" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>Notion</a></li>
-    <li>Docker·Jenkins 활용 <strong>CI/CD 무중단 배포</strong> 환경 구축 경험</li>
-    <li>Flutter 기반 모바일 앱 개발 및 <strong>Google Play Store 배포</strong> 경험</li>
+    <li>Docker·Jenkins 활용 <strong>CI/CD 무중단 배포</strong> 환경 구축 경험<a class="notion-link" href="https://mirea70.github.io/Portfolio/?section=cicd#fitmate" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>상세 보기</a></li>
+    <li>Flutter 기반 모바일 앱 개발 및 <strong>Google Play Store 배포</strong> 경험<a class="notion-link" href="https://mirea70.github.io/Portfolio/#fitmate" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>상세 보기</a></li>
     <li>클라우드 환경(AWS 등)에서의 서비스 개발 및 운영 경험</li>
 
   </ul>
 
   <!-- Tech Stack -->
   <h3 class="section-title">Tech Stack</h3>
-  <div class="stack-grid">
+  <div class="stack-grid" style="margin-bottom:48px;">
     <div class="card" style="margin-bottom:0;"><div class="stack-cat">Language</div>
       <span class="stack-badge">Java</span><span class="stack-badge">Dart</span>
     </div>
@@ -313,7 +324,7 @@ a { color: inherit; text-decoration: none; }
   <h2 class="section-title">Career</h2>
 
   <!-- WALALAND -->
-  <div class="career-block">
+  <div class="career-block no-print-divider">
     <div class="career-two-col">
       <div class="career-company-info">
         <div class="career-company-name">왈라</div>
@@ -359,7 +370,7 @@ a { color: inherit; text-decoration: none; }
   </div>
 
   <!-- Actbase -->
-  <div class="career-block">
+  <div class="career-block" style="break-before:page;page-break-before:always;">
     <div class="career-two-col">
       <div class="career-company-info">
         <div class="career-company-name">Actbase</div>
@@ -390,7 +401,7 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <!-- 성균관대학교 학습관리 시스템 -->
-        <div style="margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid #e5e7eb;">
+        <div class="no-print-divider" style="margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid #e5e7eb;">
           <h3 class="career-title">성균관대학교 학습관리 시스템</h3>
           <div class="career-desc">
             운용중인 학습관리 시스템의 유지보수/신규기능 개발을 수행했습니다. 주도적으로 다양한 기능들을 구현하며 비즈니스 요구사항에 대한 원활한 구현 역량을 키울 수 있었습니다. 외부 API 스펙에 따라 연동하여 기능을 구현한 경험을 하였습니다.
@@ -408,7 +419,7 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <!-- Trabricks -->
-        <div style="margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid #e5e7eb;">
+        <div style="margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid #e5e7eb;break-before:page;page-break-before:always;">
           <h3 class="career-title">Trabricks</h3>
           <div class="career-desc">
             기존 구현되있던 앨범공유 서비스와 새로 개발될 여행사 서비스를 한 프로젝트로 통합하는 작업을 진행했습니다. 멀티모듈의 활용방안에 대한 제안을 준비하면서, 아키텍처와 설계 관점에서 시야와 사고가 넓어질 수 있는 기간이었습니다.
@@ -451,10 +462,21 @@ a { color: inherit; text-decoration: none; }
 
 
 <!-- ═══════════════ PROJECTS ═══════════════ -->
-<div class="page" id="pg-projects">
+<div class="page" id="pg-projects" style="break-before:page;page-break-before:always;">
   <h2 class="section-title">Project</h2>
   <p style="font-size:15px;color:#64748b;margin-bottom:24px;">업무 외 진행했던 프로젝트입니다. 각 프로젝트에 대한 상세내용은 "자세히 보기"를 통해 확인하실 수 있습니다.</p>
 
+  <div class="proj-card" style="margin-bottom:35px !important;">
+    <div class="proj-head">
+      <h3 class="proj-title">분산 시스템 학습 프로젝트</h3>
+      <a class="proj-detail-btn" href="https://mirea70.github.io/Portfolio/#toy">자세히 보기 →</a>
+    </div>
+    <div style="font-size:13px;color:#94a3b8;margin:-4px 0 14px;font-weight:600;line-height:1.7;"><div><span style="display:inline-block;width:48px;color:#cbd5e1;">기간</span>2026.04 ~ 진행 중</div><div><span style="display:inline-block;width:48px;color:#cbd5e1;">인원</span>1인 개발</div></div>
+    <div class="proj-desc">서비스가 성장해나가면서 겪게 되는 문제들을 경험하고 싶어 시작한 전형적인 게시판 프로젝트입니다. 실제 게시판과 유사한 형태로 행동하는 가상 유저를 늘려가며, 성능을 측정하고 문제를 발견하면 해결해나가는 형태로 진행 중입니다. 필요에 따라 서비스를 분리하거나 서버를 스케일 아웃하는 등 아키텍처도 지속적으로 변경되고 있습니다.</div>
+    <div class="proj-stack"><span class="proj-pill">Java</span><span class="proj-pill">Spring Boot</span><span class="proj-pill">JPA</span><span class="proj-pill">MySQL</span><span class="proj-pill">Redis</span><span class="proj-pill">Kafka</span><span class="proj-pill">Docker</span><span class="proj-pill">K6</span><span class="proj-pill">Prometheus</span><span class="proj-pill">Grafana</span></div>
+    <h4 class="proj-section-title">주요 경험 사항</h4>
+    <ul class="proj-bullets"><li><strong>서버 자원의 한계</strong>를 경험하며, 측정된 지표를 기반으로 상황에 따라 합리적인 확장 방안을 선택해나가는 경험</li><li>서비스 특성에 따라 <strong>CQRS 패턴</strong>을 DB/서비스 레벨에 적용</li><li>Index 적용 상태에서도 느린 조회 성능을 <strong>Covering Index</strong>를 활용해 쿼리 성능 약 20배 개선</li><li>조회수 어뷰징을 통한 인기글 왜곡 문제를 <strong>분산 Lock</strong>을 활용해 해결</li><li>이벤트 발행의 유실 방지를 위해 <strong>Outbox 패턴</strong>을 적용</li><li><strong>캐시 만료 타이밍</strong>에 대한 동시성 이슈 해결</li></ul>
+  </div>
   <div class="proj-card">
     <div class="proj-head">
       <h3 class="proj-title">FitMate</h3>
@@ -464,22 +486,11 @@ a { color: inherit; text-decoration: none; }
     <div class="proj-desc">운동 메이트가 필요한 사람들이 종목별로 메이트를 모집하고 참여할 수 있는 소셜 플랫폼 앱입니다. 기획·백엔드·모바일 앱 개발을 1인으로 진행 중이며, Google Play Store에 출시된 상태입니다. 기능 고도화 및 배포 단계에서 AI 도구를 활용해 생산성을 높였습니다.</div>
     <div class="proj-stack"><span class="proj-pill">Java</span><span class="proj-pill">Spring Boot</span><span class="proj-pill">JPA</span><span class="proj-pill">QueryDsl</span><span class="proj-pill">OracleDB</span><span class="proj-pill">Redis</span><span class="proj-pill">MongoDB</span><span class="proj-pill">Flutter</span><span class="proj-pill">Docker</span><span class="proj-pill">Jenkins</span><span class="proj-pill">AWS</span><span class="proj-pill">OCI</span></div>
     <h4 class="proj-section-title">백엔드</h4>
-    <ul class="proj-bullets"><li>도메인 주도 개발 + <strong>클린 아키텍처</strong> 리팩토링 경험</li><li><strong>Loaded 패턴</strong>을 활용해 비즈니스 로직이 JPA와 분리된 상태에서도 더티체킹을 활용할 수 있도록 설계</li><li><strong>도메인 특성에 따른 동시성 제어 전략</strong> 설계</li><li>STOMP 프로토콜 기반 <strong>실시간 채팅</strong> 구현</li><li><strong>이미지 리사이징</strong>을 통한 네트워크 비용 절감</li><li>Docker · Jenkins <strong>CI/CD 무중단 배포</strong> 환경 구축</li></ul>
+    <ul class="proj-bullets" style="margin-bottom: 20px"><li>도메인 주도 개발 + <strong>클린 아키텍처</strong> 리팩토링 경험</li><li><strong>Loaded 패턴</strong>을 활용해 비즈니스 로직이 JPA와 분리된 상태에서도 더티체킹을 활용할 수 있도록 설계</li><li><strong>도메인 특성에 따른 동시성 제어 전략</strong> 설계</li><li>STOMP 프로토콜 기반 <strong>실시간 채팅</strong> 구현</li><li><strong>이미지 리사이징</strong>을 통한 네트워크 비용 절감</li><li>Docker · Jenkins <strong>CI/CD 무중단 배포</strong> 환경 구축</li></ul>
     <h4 class="proj-section-title">모바일 앱</h4>
-    <ul class="proj-bullets"><li>Flutter 기반 <strong>크로스플랫폼 앱</strong> 설계/개발</li><li><strong>Riverpod 기반 상태 관리</strong> — AsyncNotifier 백그라운드 갱신 시 기존 데이터 보존, 인증 상태 변경 시 도메인 캐시 일괄 무효화</li><li><strong>메모리(LRU) + 디스크 2단계 이미지 캐싱</strong>으로 네트워크 호출 최소화</li><li><strong>Google Play Store</strong>에 앱 출시</li><li><strong>Claude Code 등 AI 도구</strong>를 활용한 생산성 극대화</li></ul>
+    <ul class="proj-bullets"><li>Flutter 기반 크로스플랫폼 앱 설계/개발</li><li><strong>Riverpod</strong>을 활용한 효율적인 상태 관리</li><li><strong>메모리(LRU) + 디스크 2단계 이미지 캐싱</strong>으로 네트워크 호출 최소화</li><li><strong>Google Play Store</strong>에 앱 출시</li><li><strong>Claude Code 등 AI 도구</strong>를 활용한 생산성 극대화</li></ul>
   </div>
-  <div class="proj-card">
-    <div class="proj-head">
-      <h3 class="proj-title">분산 시스템 학습 프로젝트</h3>
-      <a class="proj-detail-btn" href="https://mirea70.github.io/Portfolio/#toy">자세히 보기 →</a>
-    </div>
-    <div style="font-size:13px;color:#94a3b8;margin:-4px 0 14px;font-weight:600;line-height:1.7;"><div><span style="display:inline-block;width:48px;color:#cbd5e1;">기간</span>2026.04 ~ 진행 중</div><div><span style="display:inline-block;width:48px;color:#cbd5e1;">인원</span>1인 개발</div></div>
-    <div class="proj-desc">서비스가 성장해나가면서 겪게 되는 문제들을 경험하고 싶어 시작한 전형적인 게시판 프로젝트입니다. 실제 게시판과 유사한 형태로 행동하는 가상 유저를 늘려가며, 성능을 측정하고 문제를 발견하면 해결해나가는 형태로 진행 중입니다. 필요에 따라 서비스를 분리하거나 서버를 스케일 아웃하는 등 아키텍처도 지속적으로 변경되고 있습니다.</div>
-    <div class="proj-stack"><span class="proj-pill">Java</span><span class="proj-pill">Spring Boot</span><span class="proj-pill">JPA</span><span class="proj-pill">MySQL</span><span class="proj-pill">Redis</span><span class="proj-pill">Kafka</span><span class="proj-pill">Docker</span></div>
-    <h4 class="proj-section-title">주요 개발 사항</h4>
-    <ul class="proj-bullets"><li>CQRS 패턴 적용으로 서버 부하의 효율적 관리 및 인기글/게시글 조회 기능 최적화</li><li><strong>Covering Index</strong>를 활용해 게시글 목록 조회 쿼리를 약 20배 개선</li><li><strong>분산 Lock</strong>을 활용한 조회수 어뷰징 방지</li><li><strong>Outbox 패턴</strong>을 활용한 분산 시스템 트랜잭션 핸들링</li><li>캐시 만료 타이밍에 대한 동시성 이슈 해결</li></ul>
-  </div>
-  <div class="proj-card">
+  <div class="proj-card" style="margin-bottom:48px !important;">
     <div class="proj-head">
       <h3 class="proj-title">위풍댕댕</h3>
       <a class="proj-detail-btn" href="https://github.com/mirea70/MyPetForShop-Project" target="_blank">GitHub →</a>
@@ -587,12 +598,6 @@ a { color: inherit; text-decoration: none; }
 <!-- Page Navigation -->
 <div id="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px solid #e2e8f0;"></div>
 
-<!-- Footer -->
-<div class="footer">
-  <p>© 2026 박성재 — Backend Developer Portfolio</p>
-  <p style="margin-top:4px;">Built for GitHub Pages</p>
-</div>
-
 <!-- Play Store 비공개 테스트 모달 -->
 <div id="playstore-modal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center;backdrop-filter:blur(4px);">
   <div style="background:#fff;border-radius:16px;padding:32px;max-width:460px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.2);position:relative;">
@@ -636,7 +641,7 @@ function updatePrevNext(id) {
   const labels = {intro:'소개',career:'경력',projects:'프로젝트',education:'학력',contact:'연락처'};
   nav.innerHTML =
     (prev ? '<button onclick="go(\''+prev+'\')" style="padding:10px 24px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;cursor:pointer;font-size:14px;font-weight:600;color:#475569;font-family:Pretendard,sans-serif;transition:all .2s;">← '+labels[prev]+'</button>' : '<span></span>') +
-    (next ? '<button onclick="go(\''+next+'\')" style="padding:10px 24px;border-radius:8px;border:1px solid #f97316;background:#fff;cursor:pointer;font-size:14px;font-weight:600;color:#f97316;font-family:Pretendard,sans-serif;transition:all .2s;">'+labels[next]+' →</button>' : '<span></span>');
+    (next ? '<button class="page-nav-next" onclick="go(\''+next+'\')" style="padding:10px 24px;border-radius:8px;border:1px solid #f97316;background:#fff;cursor:pointer;font-size:14px;font-weight:600;color:#f97316;font-family:Pretendard,sans-serif;">'+labels[next]+' →</button>' : '<span></span>');
 }
 
 function setSSTab(idx) {
